@@ -11,8 +11,8 @@
     <h1>Add a New Book to Your TBR Pile</h1>
 
     <form action="/books" method="post">
-        <label for="name">Book Title:</label>
-        <input type="text" name="name" id="name">
+        <label for="bookTitle">Book Title:</label>
+        <input type="text" name="bookTitle" id="bookTitle">
 
         <label for="author">Author:</label>
         <input type="text" name="author" id="author">
@@ -20,10 +20,10 @@
         <fieldset>
             <legend>Genre:</legend>
 
-            <input type="radio" id="fiction" name="genre">
+            <input type="radio" id="fiction" name="genre" value="fiction">
             <label for="fiction">Fiction</label>
 
-            <input type="radio" id="nonfiction" name="genre">
+            <input type="radio" id="nonfiction" name="genre" value="nonfiction">
             <label for="nonfiction">Non-fiction</label>
         </fieldset>
 
