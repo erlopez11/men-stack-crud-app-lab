@@ -16,7 +16,7 @@ mongoose.connection.on('connected', () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`)
 });
 
-//Mount Middlewar
+//Mount Middleware
 app.use(express.urlencoded({extended: false}));
 
 //Routes
@@ -36,7 +36,12 @@ app.post('/books', async (req, res) => {
         req.body.toBeRead = false;
     }
     await Book.create(req.body);
-    res.redirect('/books/new');
+    res.redirect('/books');
+});
+
+app.get('/books', async (req, res) => {
+    const bookshelf = await Book.find({});
+    res.render('books/index.ejs', {books: bookshelf});
 });
 
 app.listen(3000, () => {
