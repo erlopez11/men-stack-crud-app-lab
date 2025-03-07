@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add A New Book</title>
 </head>
+
 <body>
     <h1>Add a New Book to Your TBR Pile</h1>
+
+    <form action="/books" method="post">
+        <label for="name">Book Title:</label>
+        <input type="text" name="name" id="name">
+
+        <label for="author">Author:</label>
+        <input type="text" name="author" id="author">
+
+        <fieldset>
+            <legend>Genre:</legend>
+
+            <input type="radio" id="fiction" name="genre">
+            <label for="fiction">Fiction</label>
+
+            <input type="radio" id="nonfiction" name="genre">
+            <label for="nonfiction">Non-fiction</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Did you read this book?</legend>
+            <input type="checkbox" name="toBeRead" id="toBeRead">
+            <label for="toBeRead">Yes</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Rating:</legend>
+            <input type="radio" id="star1" value="1" name="starRating">
+            <label for="star1"></label>
+
+            <input type="radio" id="star2" value="2" name="starRating">
+            <label for="star2"></label>
+
+            <input type="radio" id="star3" value="3" name="starRating">
+            <label for="star3"></label>
+
+            <input type="radio" id="star4" value="4" name="starRating">
+            <label for="star4"></label>
+
+            <input type="radio" id="star5" value="5" name="starRating">
+            <label for="star5"></label>
+        </fieldset>
+
+        <button type="submit">Add New Book</button>
+    </form>
 </body>
+
 </html>
