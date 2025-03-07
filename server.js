@@ -16,6 +16,9 @@ mongoose.connection.on('connected', () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`)
 });
 
+//Mount Middlewar
+app.use(express.urlencoded({extended: false}));
+
 //Routes
 
 app.get('/', (req, res) => {
@@ -24,7 +27,17 @@ app.get('/', (req, res) => {
 
 app.get('/books/new', (req, res) => {
     res.render('books/new.ejs');
-})
+});
+
+app.post('/books', async (req, res) => {
+    if (req.body.toBeRead === 'on') {
+        req.body.toBeRead = true;
+    } else {
+        req.body.toBeRead = false;
+    }
+    await Book.create(req.body);
+    res.redirect('/books/new');
+});
 
 app.listen(3000, () => {
     console.log('Listening in port 3000');
