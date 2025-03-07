@@ -22,6 +22,10 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
 });
 
+app.get('/books/new', (req, res) => {
+    res.send('This route sends the user a form page so they can add new books!');
+})
+
 app.listen(3000, () => {
     console.log('Listening in port 3000');
 });
