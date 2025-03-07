@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/books/new', (req, res) => {
-    res.send('This route sends the user a form page so they can add new books!');
+    res.render('books/new.ejs');
 })
 
 app.listen(3000, () => {
