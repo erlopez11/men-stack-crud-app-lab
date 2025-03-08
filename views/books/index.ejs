@@ -10,7 +10,9 @@
     <h1>Welcome to Your Bookshelf</h1>
     <ul>
         <% books.forEach(book => { %>
-            <li><%= book.bookTitle %></li>
+            <li>
+                <a href="/books/<%= book._id %>"><%= book.bookTitle %></a>
+            </li>
       <% }) %>
     </ul>
 </body>
