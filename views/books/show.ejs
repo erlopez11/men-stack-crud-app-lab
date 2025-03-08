@@ -8,5 +8,25 @@
 <body>
     <%- include('../partials/nav') %>
     <h1><%= book.bookTitle %></h1>
+    <h2><%= book.author %></h2>
+    <h3><%= book.genre %></h3>
+
+    <% if (book.toBeRead) { %>
+        <h3>Read</h3>
+    <% } else { %>
+        <h3>Want To Read</h3>
+   <% } %>
+
+   <% if (book.starRating === '1') { %>
+        <p>⭐️</p>
+   <% } else if (book.starRating === '2') { %>
+        <p>⭐️⭐️</p>
+  <% } else if (book.starRating === '3') { %>
+        <p>⭐️⭐️⭐️</p>
+  <% } else if (book.starRating === '4') { %>
+        <p>⭐️⭐️⭐️⭐️</p>
+  <% } else if (book.starRating === '5') { %>
+        <p>⭐️⭐️⭐️⭐️⭐️</p>
+  <% }%>
 </body>
 </html>
