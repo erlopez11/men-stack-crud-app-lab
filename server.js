@@ -4,6 +4,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 //Import Book Model
 const Book = require('./models/book');
+const methodOverride = require('method-override');
+const morgan = require('morgan');
 
 //Initialize Express App
 const app = express();
@@ -18,6 +20,8 @@ mongoose.connection.on('connected', () => {
 
 //Mount Middleware
 app.use(express.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
+app.use(morgan('dev'));
 
 //Routes
 
@@ -47,7 +51,12 @@ app.get('/books', async (req, res) => {
 app.get('/books/:bookId', async (req, res) => {
     const foundBook = await Book.findById(req.params.bookId);
     res.render('books/show.ejs', {book: foundBook});
-})
+});
+
+app.delete('/books/:bookId', async (req, res) => {
+    await Book.findByIdAndDelete(req.params.bookId);
+    res.redirect('/books');
+});
 
 app.listen(3000, () => {
     console.log('Listening in port 3000');
