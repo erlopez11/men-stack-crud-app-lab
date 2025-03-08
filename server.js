@@ -44,6 +44,11 @@ app.get('/books', async (req, res) => {
     res.render('books/index.ejs', {books: bookshelf});
 });
 
+app.get('/books/:bookId', async (req, res) => {
+    const foundBook = await Book.findById(req.params.bookId);
+    res.render('books/show.ejs', {book: foundBook});
+})
+
 app.listen(3000, () => {
     console.log('Listening in port 3000');
 });
