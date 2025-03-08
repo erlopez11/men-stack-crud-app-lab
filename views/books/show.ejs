@@ -28,5 +28,9 @@
   <% } else if (book.starRating === '5') { %>
         <p>⭐️⭐️⭐️⭐️⭐️</p>
   <% }%>
+
+  <form action="/books/<%= book._id%>?_method=DELETE" method="post">
+      <button type="submit">Delete <%= book.bookTitle %></button>
+  </form>
 </body>
 </html>
