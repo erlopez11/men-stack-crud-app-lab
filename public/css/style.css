@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spicy+Rice&display=swap');
 
 :root {
     /*Colors*/
-    --colorLight: rgb(255, 255, 255);
-    --colorDark: rgb(3, 28, 37);
-    --colorMed: rgb(78, 141, 166);
-    --colorAccent: rgb(250, 158, 45);
+    --lightPurple: rgb(86, 93, 138);
+    --darkPurple: rgb(14, 20, 54);
+    --lightBlue: rgb(90, 143, 155);
+    --lightGreen: rgb(164, 193, 164);
+    --lightYellow: rgb(238, 241, 218);
 }
 
 * {
@@ -15,14 +16,14 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     min-height: 100vh;
-    color: var(--colorDark);
+    color: var(--darkPurple);
 }
 
 a {
     text-decoration: none;
-    color: var(--colorLight);
+    color: var(--lightYellow);
 }
 
 li {
@@ -30,78 +31,130 @@ list-style: none;
 }
 
 header {
-    background-color: var(--colorMed);
-    display: flex;
-    justify-content: flex-end;
-    padding: 15px;
+    background-color: var(--lightPurple);
+    padding: 25px;
 }
 
 nav {
     width: 50%;
-    color: var(--colorLight)
+    color: var(--lightYellow);
 }
 
-nav ul {
+.primaryNav {
     display: flex;
-    justify-content: space-between;
     padding: 10px;
 }
 
 nav a:hover {
-    color: var(--colorAccent);
+    color: var(--lightGreen);
 }
 
 h1 {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Spicy Rice', sans-serif;
 }
 footer {
-    background-color: var(--colorMed);
+    background-color: var(--lightPurple);
     position: fixed;
     width: 100%;
-    height: 15vh;
+    height: 74px;
 }
 
+.mobile-nav-toggle {
+    display: none;
+}
 
 /* Home Page */
 .hero {
-    color: var(--colorLight);
+    color: var(--lightYellow);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    height: 25vh;
+    height: 86vh;
     background-image: url(../images/heroImg.jpg), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     background-blend-mode: overlay;
     background-size: contain;
 }
-.hero h1 {
-    margin-bottom: 20px;;
-}
-
-.action-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 50px;
-    height:60vh;
-}
 
 .linkBtn {
-    background-color: var(--colorAccent);
-    padding: 14px 25px;
+    background-color: var(--lightGreen);
+    color: var(--darkPurple);
     display: inline-block;
     border-radius: 6px;
 }
 .linkBtn:hover {
-    background-color: var(--colorMed);
+    background-color: var(--lightBlue);
 }
 
 
 
 
 /* Media Queries */
-@media (max-width: 400px) {
-    /* Homepage */
+@media (max-width: 559px) {
+    /* Navigation */
+
+    .primaryNav {
+        background-color: var(--lightBlue);
+        z-index: 1000;
+        inset: 0 0 80%;
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding-top: 40px;
+        margin: 0;
+        display: none;
+    }
+
+    .primaryNav[data-visible = 'true'] {
+        display: block;
+    }
+   
+    .mobile-nav-toggle {
+        display: block;
+        color: var(--lightYellow);
+        border: none;
+        background: transparent;
+        background-image: url(../images/hamburgerMenu.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        z-index: 2000;
+        width: 24px;
+        aspect-ratio: 1;
+    }
+
+    .mobile-nav-toggle[aria-expanded = 'true'] {
+        background-image: url(../images/close.svg);
+    }
+
+    /* HomePage */
+    .hero {
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .callToAction {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .linkBtn {
+       padding: 2px 8px;
+       text-align: center;
+    }
 }
+
