@@ -58,6 +58,21 @@ app.delete('/books/:bookId', async (req, res) => {
     res.redirect('/books');
 });
 
+app.get('/books/:bookId/edit', async (req, res) => {
+    const foundBook = await Book.findById(req.params.bookId);
+    res.render('books/edit.ejs', {book: foundBook});
+});
+
+app.put('/books/:bookId', async (req, res) => {
+    if (req.body.toBeRead === 'on') {
+        req.body.toBeRead = true;
+    } else {
+        req.body.toBeRead = false;
+    }
+    await Book.findByIdAndUpdate(req.params.bookId, req.body);
+    res.redirect(`/books/${req.params.bookId}`);
+});
+
 app.listen(3000, () => {
     console.log('Listening in port 3000');
 });
