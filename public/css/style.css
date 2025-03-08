@@ -42,7 +42,6 @@ nav {
 
 .primaryNav {
     display: flex;
-    padding: 10px;
 }
 
 nav a:hover {
@@ -63,7 +62,7 @@ footer {
     display: none;
 }
 
-/* Home Page */
+/* Homepage */
 .hero {
     color: var(--lightYellow);
     display: flex;
@@ -74,6 +73,10 @@ footer {
     background-image: url(../images/heroImg.jpg), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     background-blend-mode: overlay;
     background-size: contain;
+}
+
+.callToAction {
+    gap: 20px;
 }
 
 .linkBtn {
@@ -130,7 +133,7 @@ footer {
         background-image: url(../images/close.svg);
     }
 
-    /* HomePage */
+    /* Homepage */
     .hero {
         padding: 40px;
     }
@@ -148,7 +151,6 @@ footer {
     .callToAction {
         display: flex;
         flex-direction: column;
-        gap: 20px;
         margin-top: 20px;
     }
 
@@ -158,3 +160,27 @@ footer {
     }
 }
 
+@media (min-width: 560px) {
+    header {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .primaryNav {
+        justify-content: space-between;
+    }
+
+    /* Homepage */
+    h1 {
+        font-size: 60px;
+    }
+
+    .callToAction {
+        margin-top: 30px;
+        display: flex;
+    }
+    
+    .linkBtn {
+        padding: 8px 10px;
+    }
+}
