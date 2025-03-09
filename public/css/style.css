@@ -5,6 +5,7 @@
     --lightPurple: rgb(86, 93, 138);
     --darkPurple: rgb(14, 20, 54);
     --lightBlue: rgb(90, 143, 155);
+    --lightGrey: #c7d9dd;
     --lightGreen: rgb(164, 193, 164);
     --lightYellow: rgb(238, 241, 218);
 }
@@ -31,7 +32,7 @@ list-style: none;
 }
 
 header {
-    background-color: var(--lightPurple);
+    background-color: var(--darkPurple);
     padding: 25px;
 }
 
@@ -52,10 +53,14 @@ h1 {
     font-family: 'Spicy Rice', sans-serif;
 }
 footer {
-    background-color: var(--lightPurple);
+    background-color: var(--darkPurple);
     position: fixed;
     width: 100%;
     height: 74px;
+}
+
+.contentHeight {
+    height: 86vh;
 }
 
 .mobile-nav-toggle {
@@ -69,7 +74,6 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 86vh;
     background-image: url(../images/heroImg.jpg), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
     background-blend-mode: overlay;
     background-size: contain;
@@ -89,13 +93,28 @@ footer {
     background-color: var(--lightBlue);
 }
 
+/* Add A Book Page */
+.createContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--lightGrey);
+}
+
+/* Form for Create & Update */
+form {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    margin-top: 20px;
+}
 
 
 
 /* Media Queries */
 @media (max-width: 559px) {
     /* Navigation */
-
     .primaryNav {
         background-color: var(--lightBlue);
         z-index: 1000;
@@ -105,6 +124,7 @@ footer {
         align-items: center;
         gap: 40px;
         padding-top: 40px;
+        padding-left: 20px;
         margin: 0;
         display: none;
     }
@@ -158,12 +178,18 @@ footer {
        padding: 2px 8px;
        text-align: center;
     }
+    /* Form */
+    form {
+        padding: 40px;
+        gap: 10px;
+    }
 }
 
 @media (min-width: 560px) {
     header {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .primaryNav {
@@ -179,7 +205,7 @@ footer {
         margin-top: 30px;
         display: flex;
     }
-    
+
     .linkBtn {
         padding: 8px 10px;
     }
