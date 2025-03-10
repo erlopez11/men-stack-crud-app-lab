@@ -133,8 +133,8 @@ footer {
     flex-wrap: wrap;
 }
 
-.bookTitle a:hover {
-    color: var(--lightBlue);
+.bookTitle:hover {
+    color: var(--lightGreen);
 }
 
 .indexContent {
@@ -149,12 +149,16 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    min-height: 84vh;
 }
 
 .book {
-    background-color: var(--lightPurple);
+    background-color: var(--lightBlue);
     border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .bookInfo {
@@ -181,6 +185,10 @@ footer {
     align-items: center;
 }
 
+.showTextContent h3 {
+    font-weight: 400;
+}
+
 .deleteBtn {
     background-color: var(--lightBlue);
     color: var(--lightYellow);
@@ -205,6 +213,10 @@ footer {
 
 .editBtn:hover {
     background-color: var(--darkPurple);
+}
+
+.starSize {
+    font-size: 24px;
 }
 
 /* Media Queries */
@@ -330,10 +342,6 @@ footer {
     }
 
     /* Index */
-    .book {
-        width: 150px;
-        height: 200px;
-    }
 
     .indexContent h1 {
         margin-top: 50px;
@@ -345,7 +353,11 @@ footer {
 
     .bookAuthor {
         font-size: 12px;
-        margin-bottom: 10px;
+    }
+
+    .book {
+        width: 70%;
+        height: 150px;
     }
     
 }
@@ -428,17 +440,13 @@ footer {
         .formBtn {
             padding: 15px;
         }
-        .book {
-            width: 150px;
-            height: 200px;
-        }
     
         .indexContent h1 {
             margin-top: 20px;
         }
 
         .bookContent {
-            min-height: 84vh;
+            gap: 20px;
         }
     
         .bookTitle {
@@ -448,5 +456,10 @@ footer {
         .bookAuthor {
             font-size: 14px;
             margin-bottom: 10px;
+        }
+
+        .book {
+            width: 400px;
+            height: 200px;
         }
 }
