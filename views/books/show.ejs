@@ -4,36 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/script.js"></script>
     <title><%= book.bookTitle %></title>
 </head>
 <body>
     <%- include('../partials/nav') %>
-    <h1><%= book.bookTitle %></h1>
-    <h2><%= book.author %></h2>
-    <h3><%= book.genre %></h3>
-
-    <% if (book.toBeRead) { %>
-        <h3>Read</h3>
-    <% } else { %>
-        <h3>Want To Read</h3>
-   <% } %>
-
-   <% if (book.starRating === '1') { %>
-        <p>⭐️</p>
-   <% } else if (book.starRating === '2') { %>
-        <p>⭐️⭐️</p>
-  <% } else if (book.starRating === '3') { %>
-        <p>⭐️⭐️⭐️</p>
-  <% } else if (book.starRating === '4') { %>
-        <p>⭐️⭐️⭐️⭐️</p>
-  <% } else if (book.starRating === '5') { %>
-        <p>⭐️⭐️⭐️⭐️⭐️</p>
-  <% }%>
-
-  <form action="/books/<%= book._id%>?_method=DELETE" method="post">
-      <button type="submit">Delete <%= book.bookTitle %></button>
-  </form>
-
-  <a href="/books/<%= book._id %>/edit">Edit Book</a>
+    <div class="showContainer contentHeight">
+        <div class="book"></div>
+        <div class="showTextContent">
+            <h1><%= book.bookTitle %></h1>
+            <h2><%= book.author %></h2>
+            <h3><%= book.genre %></h3>
+        
+            <% if (book.toBeRead) { %>
+                <h3>Read</h3>
+            <% } else { %>
+                <h3>Want To Read</h3>
+           <% } %>
+        
+           <% if (book.starRating === '1') { %>
+                <p>⭐️</p>
+           <% } else if (book.starRating === '2') { %>
+                <p>⭐️⭐️</p>
+          <% } else if (book.starRating === '3') { %>
+                <p>⭐️⭐️⭐️</p>
+          <% } else if (book.starRating === '4') { %>
+                <p>⭐️⭐️⭐️⭐️</p>
+          <% } else if (book.starRating === '5') { %>
+                <p>⭐️⭐️⭐️⭐️⭐️</p>
+          <% }%>
+        
+          <form class="deleteForm" action="/books/<%= book._id%>?_method=DELETE" method="post">
+              <button class="deleteBtn" type="submit">Delete <%= book.bookTitle %></button>
+          </form>
+        
+          <a class="editBtn" href="/books/<%= book._id %>/edit">Edit Book</a>
+        </div>
+    </div>
+    <footer></footer>
 </body>
 </html>
