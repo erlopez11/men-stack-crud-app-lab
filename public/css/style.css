@@ -54,7 +54,7 @@ h1 {
 }
 footer {
     background-color: var(--darkPurple);
-    height: 8vh;
+    height: 7vh;
 }
 
 .contentHeight {
@@ -104,7 +104,7 @@ footer {
 }
 
 /* Form for Create & Update */
-form {
+.newEditForm {
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -165,6 +165,46 @@ form {
 
 .bookInfo a {
     color: var(--darkPurple);
+}
+
+.showContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.showTextContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deleteBtn {
+    background-color: var(--lightBlue);
+    color: var(--lightYellow);
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+.deleteBtn:hover {
+    background-color: var(--lightGreen);
+}
+
+.editBtn {
+    background-color: var(--lightPurple);
+    color: var(--lightGrey);
+    font-size: 13px;
+    border-radius: 20px;
+    padding: 6px 30px;
+    margin-top: 10px;
+}
+
+.editBtn:hover {
+    background-color: var(--darkPurple);
 }
 
 /* Media Queries */
@@ -240,7 +280,7 @@ form {
     }
 
     /* Form */
-    form {
+    .newEditForm {
         padding: 40px;
         gap: 8px;
     }
@@ -341,7 +381,7 @@ form {
         }
     
         /* Form */
-        form {
+        .newEditForm {
             padding: 40px;
             gap: 20px;
         }
