@@ -10,7 +10,6 @@
 <body>
     <%- include('../partials/nav') %>
     <div class="showContainer contentHeight">
-        <div class="book"></div>
         <div class="showTextContent">
             <h1><%= book.bookTitle %></h1>
             <h2><%= book.author %></h2>
@@ -23,15 +22,15 @@
            <% } %>
         
            <% if (book.starRating === '1') { %>
-                <p>⭐️</p>
+                <p class="starSize">⭐️</p>
            <% } else if (book.starRating === '2') { %>
-                <p>⭐️⭐️</p>
+                <p class="starSize">⭐️ ⭐️</p>
           <% } else if (book.starRating === '3') { %>
-                <p>⭐️⭐️⭐️</p>
+                <p class="starSize">⭐️ ⭐️ ⭐️</p>
           <% } else if (book.starRating === '4') { %>
-                <p>⭐️⭐️⭐️⭐️</p>
+                <p class="starSize">⭐️ ⭐️ ⭐️ ⭐️</p>
           <% } else if (book.starRating === '5') { %>
-                <p>⭐️⭐️⭐️⭐️⭐️</p>
+                <p class="starSize">⭐️ ⭐️ ⭐️ ⭐️ ⭐️</p>
           <% }%>
         
           <form class="deleteForm" action="/books/<%= book._id%>?_method=DELETE" method="post">
