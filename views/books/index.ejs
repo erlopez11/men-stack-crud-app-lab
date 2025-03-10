@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/script.js"></script>
     <title>Bookself</title>
 </head>
 <body>
     <%- include('../partials/nav') %>
     <div class="indexContent">
         <h1 class="indexPageHeading">Welcome to Your Bookshelf</h1>
-        <ul>
+        <div class="bookContent">
             <% books.forEach(book => { %>
-                <li class="bookTitle">
-                    <a href="/books/<%= book._id %>"><%= book.bookTitle %></a>
-                </li>
+                <div>
+                    <div class="book"></div>
+                    <div class="bookInfo">
+                        <h4 class="bookTitle">
+                            <a href="/books/<%= book._id %>"><%= book.bookTitle %></a>
+                        </h4>
+                        <h5 class="bookAuthor">
+                            <a href="/books/<%= book._id %>"><%= book.author %></a>
+                        </h5>
+                    </div>                    
+                </div>
           <% }) %>
-        </ul>
+        </div>
     </div>
-    
+    <footer></footer>
 </body>
 </html>
