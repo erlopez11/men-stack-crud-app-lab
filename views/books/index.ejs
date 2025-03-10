@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Bookself</title>
 </head>
 <body>
     <%- include('../partials/nav') %>
-    <h1>Welcome to Your Bookshelf</h1>
-    <ul>
-        <% books.forEach(book => { %>
-            <li>
-                <a href="/books/<%= book._id %>"><%= book.bookTitle %></a>
-            </li>
-      <% }) %>
-    </ul>
+    <div class="indexContent">
+        <h1 class="indexPageHeading">Welcome to Your Bookshelf</h1>
+        <ul>
+            <% books.forEach(book => { %>
+                <li class="bookTitle">
+                    <a href="/books/<%= book._id %>"><%= book.bookTitle %></a>
+                </li>
+          <% }) %>
+        </ul>
+    </div>
+    
 </body>
 </html>
