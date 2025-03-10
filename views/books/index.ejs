@@ -13,14 +13,11 @@
         <h1 class="indexPageHeading">Welcome to Your Bookshelf</h1>
         <div class="bookContent">
             <% books.forEach(book => { %>
-                <div>
-                    <div class="book"></div>
+                <div class="book">
                     <div class="bookInfo">
-                        <h4 class="bookTitle">
-                            <a href="/books/<%= book._id %>"><%= book.bookTitle %></a>
-                        </h4>
+                        <a class="bookTitle" href="/books/<%= book._id %>"><%= book.bookTitle %></a>
                         <h5 class="bookAuthor">
-                            <a href="/books/<%= book._id %>"><%= book.author %></a>
+                            <%= book.author %>
                         </h5>
                     </div>                    
                 </div>
