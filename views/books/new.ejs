@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script defer src="/js/script.js"></script>
     <title>Add A New Book</title>
 </head>
 
 <body>
     <%- include('../partials/nav') %>
-        <div class="createContent contentHeight">
-            <h1 class="createHeading">Add A New Book</h1>
+        <div class="formPageContent contentHeight">
+            <h1 class="formPageHeading">Add A New Book</h1>
 
             <form action="/books" method="post">
                 <label for="bookTitle">Book Title:</label>
@@ -37,25 +38,45 @@
                     <label for="toBeRead">Yes</label>
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="rating">
                     <legend>Rating:</legend>
-                    <input type="radio" id="star1" value="1" name="starRating">
-                    <label for="star1"></label>
+                    <div class="starBtn">
+                      <input type="radio" id="star1" value="1" name="starRating">
+                      <label for="star1">
+                        <i id="starShape" class="material-icons">star</i>
+                      </label>
+                    </div>
 
-                    <input type="radio" id="star2" value="2" name="starRating">
-                    <label for="star2"></label>
+                    <div class="starBtn">
+                      <input type="radio" id="star2" value="2" name="starRating">
+                      <label for="star2">
+                        <i id="starShape" class="material-icons">star</i>
+                      </label>
+                    </div>
 
-                    <input type="radio" id="star3" value="3" name="starRating">
-                    <label for="star3"></label>
+                    <div class="starBtn">
+                      <input type="radio" id="star3" value="3" name="starRating">
+                      <label for="star3">
+                        <i id="starShape" class="material-icons">star</i>
+                      </label>
+                    </div>
 
-                    <input type="radio" id="star4" value="4" name="starRating">
-                    <label for="star4"></label>
+                    <div class="starBtn">
+                      <input type="radio" id="star4" value="4" name="starRating">
+                      <label for="star4">
+                        <i id="starShape" class="material-icons">star</i>
+                      </label>
+                    </div>
 
-                    <input type="radio" id="star5" value="5" name="starRating">
-                    <label for="star5"></label>
+                    <div class="starBtn">
+                      <input type="radio" id="star5" value="5" name="starRating">
+                      <label for="star5">
+                        <i id="starShape" class="material-icons">star</i>
+                      </label>
+                    </div>
                 </fieldset>
 
-                <button type="submit">Add New Book</button>
+                <button class="formBtn" type="submit">Add New Book</button>
             </form>
         </div>
     <footer></footer>
