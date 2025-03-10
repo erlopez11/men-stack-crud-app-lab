@@ -93,12 +93,16 @@ footer {
     background-color: var(--lightBlue);
 }
 
-/* Add A Book Page */
-.createContent {
+/* Add A Book Page/ Edit Page */
+.formPageContent {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--lightGrey);
+}
+
+.formPageHeading {
+    color: var(--lightBlue);
 }
 
 /* Form for Create & Update */
@@ -110,7 +114,37 @@ form {
     margin-top: 20px;
 }
 
+.formBtn {
+    background-color: var(--lightBlue);
+    color: var(--lightYellow);
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+}
 
+.formBtn:hover {
+    background-color: var(--lightGreen);
+}
+
+/* Index */
+.indexPageHeading {
+    color: var(--lightPurple)
+}
+
+.bookTitle a {
+    color: var(--darkPurple);
+}
+
+.bookTitle a:hover {
+    color: var(--lightBlue);
+}
+
+.indexContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Media Queries */
 @media (max-width: 559px) {
@@ -178,10 +212,60 @@ form {
        padding: 2px 8px;
        text-align: center;
     }
+
+    /* Add a Book Page/ Edit Page */
+    .formPageHeading {
+        margin-top: 20px;
+    }
+
     /* Form */
     form {
         padding: 40px;
-        gap: 10px;
+        gap: 8px;
+    }
+
+    label,
+    legend {
+        font-size: 14px;
+    }
+
+    input[type=text] {
+        border: 1px solid var(--lightPurple);
+        border-radius: 20px;
+        padding: 5px 12px;
+    }
+
+    fieldset {
+        border: 1px solid var(--lightPurple);
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+
+    .rating {
+        display: flex;
+        gap: 10px
+    }
+
+    .rating div {
+        position: relative;
+    }
+
+    .rating input[type=radio] {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        z-index: -2;
+        opacity: 0;
+    }
+
+    #starShape {
+        color: var(--lightGrey);
+        width: 24px;
+        height: 24px;
+    }
+
+    .checked {
+        background-color: gold;
     }
 }
 
@@ -209,4 +293,58 @@ form {
     .linkBtn {
         padding: 8px 10px;
     }
+
+        /* Add a Book Page/ Edit Page */
+        .formPageHeading {
+            margin-top: 20px;
+        }
+    
+        /* Form */
+        form {
+            padding: 40px;
+            gap: 20px;
+        }
+    
+        input[type=text] {
+            border: 1px solid var(--lightPurple);
+            border-radius: 20px;
+            padding: 5px 12px;
+        }
+    
+        fieldset {
+            border: 1px solid var(--lightPurple);
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+    
+        .rating {
+            display: flex;
+            gap: 10px
+        }
+    
+        .rating div {
+            position: relative;
+        }
+    
+        .rating input[type=radio] {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            z-index: -2;
+            opacity: 0;
+        }
+    
+        #starShape {
+            color: var(--lightGrey);
+            width: 24px;
+            height: 24px;
+        }
+    
+        .checked {
+            background-color: gold;
+        }
+
+        .formBtn {
+            padding: 15px;
+        }
 }
