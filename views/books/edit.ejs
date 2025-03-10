@@ -3,51 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="/js/script.js"></script>
     <title>Edit <%= book.bookTitle %></title>
 </head>
 <body>
-    <form action="/books/<%= book.id %>?_method=PUT" method="post">
-        <label for="bookTitle">Book Title:</label>
-        <input type="text" name="bookTitle" id="bookTitle" value="<%= book.bookTitle %>">
+    <%- include('../partials/nav') %>
+    <div class="formPageContent contentHeight">
+        <h1 class="formPageHeading">Edit Book Information</h1>
+        
+        <form class="newEditForm" action="/books/<%= book.id %>?_method=PUT" method="post">
+            <label for="bookTitle">Book Title:</label>
+            <input type="text" name="bookTitle" id="bookTitle" value="<%= book.bookTitle %>">
+    
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author" value="<%= book.author %>">
+    
+            <fieldset>
+                <legend>Genre:</legend>
+    
+                <input type="radio" id="fiction" name="genre" value="fiction" <% if (book.genre === 'fiction') { %>checked<%} %>>
+                <label for="fiction">Fiction</label>
+    
+                <input type="radio" id="nonfiction" name="genre" value="nonfiction" <% if (book.genre === 'nonfiction') { %>checked<%} %>>
+                <label for="nonfiction">Non-fiction</label>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Did you read this book?</legend>
+                <input type="checkbox" name="toBeRead" id="toBeRead" <% if (book.toBeRead) { %>checked<%} %>>
+                <label for="toBeRead">Yes</label>
+            </fieldset>
+    
+            <fieldset class="rating">
+                <legend>Rating:</legend>
+                <div class="starBtn">
+                  <input type="radio" id="star1" value="1" name="starRating">
+                  <label for="star1">
+                    <i id="starShape" class="material-icons">star</i>
+                  </label>
+                </div>
 
-        <label for="author">Author:</label>
-        <input type="text" name="author" id="author" value="<%= book.author %>">
+                <div class="starBtn">
+                  <input type="radio" id="star2" value="2" name="starRating">
+                  <label for="star2">
+                    <i id="starShape" class="material-icons">star</i>
+                  </label>
+                </div>
 
-        <fieldset>
-            <legend>Genre:</legend>
+                <div class="starBtn">
+                  <input type="radio" id="star3" value="3" name="starRating">
+                  <label for="star3">
+                    <i id="starShape" class="material-icons">star</i>
+                  </label>
+                </div>
 
-            <input type="radio" id="fiction" name="genre" value="fiction" <% if (book.genre === 'fiction') { %>checked<%} %>>
-            <label for="fiction">Fiction</label>
+                <div class="starBtn">
+                  <input type="radio" id="star4" value="4" name="starRating">
+                  <label for="star4">
+                    <i id="starShape" class="material-icons">star</i>
+                  </label>
+                </div>
 
-            <input type="radio" id="nonfiction" name="genre" value="nonfiction" <% if (book.genre === 'nonfiction') { %>checked<%} %>>
-            <label for="nonfiction">Non-fiction</label>
-        </fieldset>
-
-        <fieldset>
-            <legend>Did you read this book?</legend>
-            <input type="checkbox" name="toBeRead" id="toBeRead" <% if (book.toBeRead) { %>checked<%} %>>
-            <label for="toBeRead">Yes</label>
-        </fieldset>
-
-        <fieldset>
-            <legend>Rating:</legend>
-            <input type="radio" id="star1" value="1" name="starRating" <% if (book.starRating === '1') { %>checked<%} %>>
-            <label for="star1"></label>
-
-            <input type="radio" id="star2" value="2" name="starRating" <% if (book.starRating === '2') { %>checked<%} %>>
-            <label for="star2"></label>
-
-            <input type="radio" id="star3" value="3" name="starRating" <% if (book.starRating === '3') { %>checked<%} %>>
-            <label for="star3"></label>
-
-            <input type="radio" id="star4" value="4" name="starRating" <% if (book.starRating === '4') { %>checked<%} %>>
-            <label for="star4"></label>
-
-            <input type="radio" id="star5" value="5" name="starRating" <% if (book.starRating === '5') { %>checked<%} %>>
-            <label for="star5"></label>
-        </fieldset>
-
-        <button type="submit">Update Book</button>
-    </form>
+                <div class="starBtn">
+                  <input type="radio" id="star5" value="5" name="starRating">
+                  <label for="star5">
+                    <i id="starShape" class="material-icons">star</i>
+                  </label>
+                </div>
+            </fieldset>
+    
+            <button class="formBtn" type="submit">Update Book</button>
+        </form>
+    </div>
+    <footer></footer>
 </body>
 </html>
