@@ -37,41 +37,21 @@
             </fieldset>
     
             <fieldset class="rating">
-                <legend>Rating:</legend>
-                <div class="starBtn">
-                  <input type="radio" id="star1" value="1" name="starRating">
-                  <label for="star1">
-                    <i id="starShape" class="material-icons">star</i>
-                  </label>
-                </div>
+              <legend>Star Rating:</legend>
+              <input type="radio" id="star1" value="1" name="starRating" <% if (book.starRating === '1') { %>checked<%} %>>
+              <label for="star1">1⭐️</label>
 
-                <div class="starBtn">
-                  <input type="radio" id="star2" value="2" name="starRating">
-                  <label for="star2">
-                    <i id="starShape" class="material-icons">star</i>
-                  </label>
-                </div>
+              <input type="radio" id="star2" value="2" name="starRating" <% if (book.starRating === '2') { %>checked<%} %>>
+              <label for="star2">2⭐️</label>
 
-                <div class="starBtn">
-                  <input type="radio" id="star3" value="3" name="starRating">
-                  <label for="star3">
-                    <i id="starShape" class="material-icons">star</i>
-                  </label>
-                </div>
+              <input type="radio" id="star3" value="3" name="starRating" <% if (book.starRating === '3') { %>checked<%} %>>
+              <label for="star3">3⭐️</label>
 
-                <div class="starBtn">
-                  <input type="radio" id="star4" value="4" name="starRating">
-                  <label for="star4">
-                    <i id="starShape" class="material-icons">star</i>
-                  </label>
-                </div>
+              <input type="radio" id="star4" value="4" name="starRating" <% if (book.starRating === '4') { %>checked<%} %>>
+              <label for="star4">4⭐️</label>
 
-                <div class="starBtn">
-                  <input type="radio" id="star5" value="5" name="starRating">
-                  <label for="star5">
-                    <i id="starShape" class="material-icons">star</i>
-                  </label>
-                </div>
+              <input type="radio" id="star5" value="5" name="starRating" <% if (book.starRating === '5') { %>checked<%} %>>
+              <label for="star5">5⭐️</label>
             </fieldset>
     
             <button class="formBtn" type="submit">Update Book</button>
