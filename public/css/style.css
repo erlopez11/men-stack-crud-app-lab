@@ -33,7 +33,12 @@ list-style: none;
 
 header {
     background-color: var(--darkPurple);
-    padding: 25px;
+    padding: 10px;
+}
+
+.logo {
+    width: 8%;
+    aspect-ratio: 1;
 }
 
 nav {
@@ -222,6 +227,10 @@ footer {
 /* Media Queries */
 @media (max-width: 559px) {
     /* Navigation */
+    .logo {
+        width: 12%;
+        aspect-ratio: 1;
+    }
     .primaryNav {
         background-color: var(--lightBlue);
         z-index: 1000;
