@@ -316,29 +316,7 @@ footer {
 
     .rating {
         display: flex;
-        gap: 10px
-    }
-
-    .rating div {
-        position: relative;
-    }
-
-    .rating input[type=radio] {
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        z-index: -2;
-        opacity: 0;
-    }
-
-    #starShape {
-        color: var(--lightGrey);
-        width: 24px;
-        height: 24px;
-    }
-
-    .checked {
-        background-color: gold;
+        gap: 8px
     }
 
     /* Index */
@@ -413,28 +391,6 @@ footer {
         .rating {
             display: flex;
             gap: 10px
-        }
-    
-        .rating div {
-            position: relative;
-        }
-    
-        .rating input[type=radio] {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            z-index: -2;
-            opacity: 0;
-        }
-    
-        #starShape {
-            color: var(--lightGrey);
-            width: 24px;
-            height: 24px;
-        }
-    
-        .checked {
-            background-color: gold;
         }
 
         .formBtn {
