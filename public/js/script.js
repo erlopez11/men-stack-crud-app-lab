@@ -1,7 +1,7 @@
 // Cache
 const navToggle = document.querySelector('.mobile-nav-toggle');
 const primaryNav = document.querySelector('.primaryNav');
-const starElement = document.querySelectorAll('#starShape');
+
 
 
 
@@ -19,6 +19,3 @@ navToggle.addEventListener('click', () => {
     }
 });
 
-starElement.addEventListener('click', (event) => {
-    event.target.classList.toggle('.checked');
-})
